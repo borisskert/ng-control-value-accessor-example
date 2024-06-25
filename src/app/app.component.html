@@ -1,2 +1,7 @@
-<app-example-formular [myFormData]="exampleFormData"></app-example-formular>
-<router-outlet />
+<app-example-formular [myFormData]="exampleFormData"
+                      (submit)="onSubmit($event)"
+></app-example-formular>
+
+{{ submittedFormData | json }}
+
+<router-outlet/>
