@@ -1,4 +1,7 @@
 <form [formGroup]="myForm">
-  <input type="date" formControlName="myDate" placeholder="Enter date">
-  <button type="submit">Submit</button>
+  <input type="date"
+         formControlName="myDate"
+         placeholder="Enter date"
+  >
+  <button type="button" (click)="onSubmit()">Submit</button>
 </form>
