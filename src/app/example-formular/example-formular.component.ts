@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
-import {MyFormData} from "../my-form-data";
 import {DateInputComponent} from "../date-input/date-input.component";
 import {DateValueAccessor} from "../date-input/date-value-accessor.directive";
+import {MyFormData} from "./my-form-data";
 
 @Component({
   selector: 'app-example-formular',

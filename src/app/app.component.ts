@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {ExampleFormularComponent} from "./example-formular/example-formular.component";
-import {MyFormData} from "./my-form-data";
 import {JsonPipe} from "@angular/common";
+import {MyFormData} from "./example-formular/my-form-data";
 
 @Component({
   selector: 'app-root',
