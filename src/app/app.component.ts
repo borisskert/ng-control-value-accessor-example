@@ -15,7 +15,8 @@ export class AppComponent {
   submittedFormData: MyFormData | null = null;
 
   exampleFormData: MyFormData = {
-    myDate: new Date(1979, 10, 16, 23, 54, 59, 234),
+    myDate: new Date(1979, 10, 16),
+    myDateTime: new Date(1979, 10, 16, 23, 54, 59, 234),
   };
 
   onSubmit(myFormData: MyFormData) {

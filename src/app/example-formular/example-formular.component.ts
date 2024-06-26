@@ -28,6 +28,7 @@ export class ExampleFormularComponent implements OnInit {
   constructor(private readonly formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
       myDate: [null],
+      myDateTime: [null],
     });
   }
 
@@ -36,6 +37,7 @@ export class ExampleFormularComponent implements OnInit {
       this.myForm.patchValue({
         ...this.myFormData,
         myDate: this.myFormData?.myDate,
+        myDateTime: this.myFormData?.myDateTime,
       });
     }
   }
