@@ -1,0 +1,8 @@
+<input #input
+       useValueAsDate
+       class="date-time-input__input"
+       [type]="allowTime ? 'datetime-local' : 'date'"
+       placeholder="Enter date"
+       (change)="onDateChange($event)"
+       [formControl]="control"
+>

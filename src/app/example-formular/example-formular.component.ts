@@ -1,13 +1,16 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {MyFormData} from "../my-form-data";
-import {formatDate} from "@angular/common";
+import {DateInputComponent} from "../date-input/date-input.component";
+import {DateValueAccessor} from "../date-input/date-value-accessor.directive";
 
 @Component({
   selector: 'app-example-formular',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DateValueAccessor,
+    DateInputComponent,
   ],
   templateUrl: './example-formular.component.html',
   styleUrl: './example-formular.component.css'
@@ -32,7 +35,7 @@ export class ExampleFormularComponent implements OnInit {
     if (this.myFormData) {
       this.myForm.patchValue({
         ...this.myFormData,
-        myDate: formatDate(this.myFormData?.myDate, 'yyyy-MM-dd', 'en'),
+        myDate: this.myFormData?.myDate,
       });
     }
   }

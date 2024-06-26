@@ -1,7 +1,6 @@
 <form [formGroup]="myForm">
-  <input type="date"
-         formControlName="myDate"
-         placeholder="Enter date"
-  >
+  <app-date-input formControlName="myDate"
+                  [allowTime]="false"
+  ></app-date-input>
   <button type="button" (click)="onSubmit()">Submit</button>
 </form>
