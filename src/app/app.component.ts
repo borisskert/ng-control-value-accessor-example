@@ -12,12 +12,13 @@ import {MyFormData} from "./example-formular/my-form-data";
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  submittedFormData: MyFormData | null = null;
 
   exampleFormData: MyFormData = {
     myDate: new Date(1979, 10, 16),
     myDateTime: new Date(1979, 10, 16, 23, 54, 59, 234),
   };
+
+  submittedFormData: MyFormData | null = null;
 
   onSubmit(myFormData: MyFormData) {
     console.log('onSubmit', myFormData);

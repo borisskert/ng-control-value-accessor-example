@@ -1,4 +1,4 @@
-import {Component, ElementRef, Inject, Injector, INJECTOR, Input, ViewChild} from '@angular/core';
+import {Component, Inject, Injector, INJECTOR, Input} from '@angular/core';
 import {ControlValueAccessor, FormControl, NgControl, ReactiveFormsModule} from "@angular/forms";
 import {DatePipe} from "@angular/common";
 import {DateValueAccessor} from "./date-value-accessor.directive";
@@ -19,9 +19,6 @@ export class DateInputComponent implements ControlValueAccessor {
 
   @Input()
   allowTime = false;
-
-  @ViewChild('input', {static: true, read: ElementRef})
-  inputElementRef: ElementRef | undefined;
 
   private isDisabled = false;
 
