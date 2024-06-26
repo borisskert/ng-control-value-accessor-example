@@ -29,6 +29,7 @@ export class ExampleFormularComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       myDate: [null],
       myDateTime: [null],
+      myOptionalDateTime: [null],
     });
   }
 
@@ -38,6 +39,7 @@ export class ExampleFormularComponent implements OnInit {
         ...this.myFormData,
         myDate: this.myFormData?.myDate,
         myDateTime: this.myFormData?.myDateTime,
+        myOptionalDateTime: this.myFormData?.myOptionalDateTime,
       });
     }
   }
