@@ -65,6 +65,16 @@ export class DateInputComponent implements ControlValueAccessor {
     }
 
     const date = new Date(eventValue as string);
-    this.onChange(date);
+
+    if (!isValidDate(date)) {
+      this.onChange(null);
+    } else {
+      this.onChange(date);
+    }
   }
+}
+
+// https://stackoverflow.com/a/1353711/13213024
+function isValidDate(d: any): boolean {
+  return d instanceof Date && !isNaN(d as any);
 }

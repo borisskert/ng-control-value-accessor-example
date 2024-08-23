@@ -1,18 +1,31 @@
 <form [formGroup]="myForm">
   <div>
-    <app-date-input formControlName="myDate"
+    <label for="myRequiredDateTime">Date</label>
+    <app-date-input id="myDate"
+                    formControlName="myDate"
                     [allowTime]="false"
     ></app-date-input>
   </div>
   <div>
-    <app-date-input formControlName="myDateTime"
+    <label for="myRequiredDateTime">Date and time</label>
+    <app-date-input id="myDateTime"
+                    formControlName="myDateTime"
                     [allowTime]="true"
     ></app-date-input>
   </div>
   <div>
-    <app-date-input formControlName="myOptionalDateTime"
+    <label for="myRequiredDateTime">Optional date and time</label>
+    <app-date-input id="myOptionalDateTime"
+                    formControlName="myOptionalDateTime"
                     [allowTime]="true"
     ></app-date-input>
   </div>
-  <button type="button" (click)="onSubmit()">Submit</button>
+  <div>
+    <label for="myRequiredDateTime">Required date and time</label>
+    <app-date-input id="myRequiredDateTime"
+                    formControlName="myRequiredDateTime"
+                    [allowTime]="true"
+    ></app-date-input>
+  </div>
+  <button type="button" [disabled]="myForm.invalid" (click)="onSubmit()">Submit</button>
 </form>

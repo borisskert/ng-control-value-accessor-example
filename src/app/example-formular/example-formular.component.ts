@@ -1,8 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {DateInputComponent} from "../date-input/date-input.component";
 import {DateValueAccessor} from "../date-input/date-value-accessor.directive";
 import {MyFormData} from "./my-form-data";
+import {NgClass, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-example-formular',
@@ -11,6 +12,8 @@ import {MyFormData} from "./my-form-data";
     ReactiveFormsModule,
     DateValueAccessor,
     DateInputComponent,
+    NgClass,
+    NgIf,
   ],
   templateUrl: './example-formular.component.html',
   styleUrl: './example-formular.component.css'
@@ -30,6 +33,7 @@ export class ExampleFormularComponent implements OnInit {
       myDate: [null],
       myDateTime: [null],
       myOptionalDateTime: [null],
+      myRequiredDateTime: [null, [Validators.required]],
     });
   }
 
@@ -40,6 +44,7 @@ export class ExampleFormularComponent implements OnInit {
         myDate: this.myFormData?.myDate,
         myDateTime: this.myFormData?.myDateTime,
         myOptionalDateTime: this.myFormData?.myOptionalDateTime,
+        myRequiredDateTime: this.myFormData?.myRequiredDateTime,
       });
     }
   }
